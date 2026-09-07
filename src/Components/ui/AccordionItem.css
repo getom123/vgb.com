@@ -1,0 +1,39 @@
+/* src/components/ui/AccordionItem.css */
+.accordion-item {
+  border-bottom: 1px solid var(--gray-light);
+  margin-bottom: 1rem;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--blue-primary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.accordion-header:hover {
+  color: var(--orange-primary);
+}
+
+.accordion-icon {
+  transition: transform 0.3s ease;
+  font-size: 0.75rem;
+}
+
+.accordion-icon.open {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  padding: 0 0 1rem;
+  color: var(--gray-medium);
+  line-height: 1.6;
+}

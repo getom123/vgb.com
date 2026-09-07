@@ -1,0 +1,61 @@
+/* src/components/Testimonials.css */
+.testimonials {
+  background-color: var(--white);
+}
+
+.testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: var(--gray-light);
+  padding: 3rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.quote {
+  font-size: 5rem;
+  color: var(--orange-primary);
+  opacity: 0.3;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+}
+
+.testimonial-text {
+  font-size: 1.125rem;
+  color: var(--gray-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.client-role {
+  color: var(--gray-medium);
+  font-size: 0.875rem;
+}
+
+.testimonial-dots {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--gray-medium);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dot.active {
+  background-color: var(--orange-primary);
+  width: 30px;
+  border-radius: 5px;
+}

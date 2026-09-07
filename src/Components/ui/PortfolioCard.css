@@ -1,0 +1,52 @@
+/* src/components/ui/PortfolioCard.css */
+.portfolio-card {
+  background: var(--white);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.portfolio-image {
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(30, 58, 138, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+  color: white;
+  font-weight: 600;
+}
+
+.portfolio-image:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio-info {
+  padding: 1rem;
+}
+
+.portfolio-info h4 {
+  color: var(--blue-primary);
+}
+
+.portfolio-info p {
+  color: var(--gray-medium);
+  font-size: 0.875rem;
+}
