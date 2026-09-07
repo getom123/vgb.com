@@ -1,0 +1,66 @@
+/* src/components/Services.css */
+
+.services {
+  background-color: var(--gray-light);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+
+/* =========================
+   PROGRAM ICON
+========================= */
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1.5rem;
+
+  border-radius: 16px;
+
+  background: rgba(18, 85, 181, 0.08);
+
+  color: #1255b5;
+
+  transition: all 0.3s ease;
+}
+
+.service-icon i {
+  display: block;
+
+  font-size: 1.7rem;
+
+  line-height: 1;
+
+  color: inherit;
+
+  transition: transform 0.3s ease;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.service-card:hover .service-icon {
+  background: #1255b5;
+
+  color: #ffffff;
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(18, 85, 181, 0.18);
+}
+
+.service-card:hover .service-icon i {
+  transform: scale(1.1);
+}

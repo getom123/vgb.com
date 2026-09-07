@@ -1,15 +1,163 @@
+
 /* src/components/CTA.css */
+
 .cta {
-  background: linear-gradient(135deg, var(--blue-primary), var(--orange-primary));
+  padding: 90px 0;
+  position: relative;
+  overflow: hidden;
   text-align: center;
   color: var(--white);
+
+  background: var(--blue-primary, #1e3a8a);
 }
+
+/* Decorative white glow */
+.cta::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  top: -220px;
+  right: -100px;
+}
+
+/* Decorative orange glow */
+.cta::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+
+  background: rgba(255, 148, 31, 0.14);
+
+  bottom: -170px;
+  left: -100px;
+}
+
+.cta-container {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+
+/* =========================
+   CTA TAG
+========================= */
+
+.cta-tag {
+  display: inline-block;
+  margin-bottom: 15px;
+
+  color: #ff941f;
+
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* =========================
+   CTA HEADING
+========================= */
 
 .cta h2 {
-  color: var(--white);
+  margin: 0 0 20px;
+
+  color: #ffffff;
+
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  font-weight: 800;
 }
 
+.cta h2 span {
+  color: #ff941f;
+}
+
+
+/* =========================
+   CTA DESCRIPTION
+========================= */
+
 .cta p {
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  max-width: 680px;
+  margin: 0 auto 30px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   DONATE BUTTON
+========================= */
+
+.cta .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 150px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta .btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 75px 0;
+  }
+
+  .cta p {
+    font-size: 1rem;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 60px 20px;
+  }
+
+  .cta h2 {
+    font-size: 2.1rem;
+  }
+
+  .cta p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .cta .btn {
+    width: 100%;
+    max-width: 220px;
+  }
 }

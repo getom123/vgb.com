@@ -5,10 +5,10 @@ import './ServiceCard.css';
 const ServiceCard = ({ icon, title, description }) => {
   return (
     <div className="service-card">
-      <div className="service-icon">{icon}</div>
+      <div className="service-icon"><i className={icon}></i></div>
       <h3>{title}</h3>
       <p>{description}</p>
-      <a href="#" className="service-link">Learn More →</a>
+      {/* <a href="#" className="service-link">Learn More →</a> */}
     </div>
   );
 };
