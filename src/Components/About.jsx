@@ -1,10 +1,11 @@
 // src/components/About.jsx
 import React from 'react';
 import './About.css';
+import vgbAboutImage from './../assets/vgb_about.png';
 
 const About = () => {
   return (
-    <section id="about" className="about">
+    <section id="about-us" className="about">
 
 
       {/* Who We Are */}
@@ -12,7 +13,7 @@ const About = () => {
 
         <div className="about-image">
           <img
-            src="/images/vgb-about.jpg"
+            src={vgbAboutImage}
             alt="VGB Foundation community empowerment"
           />
         </div>

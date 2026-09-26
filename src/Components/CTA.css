@@ -161,3 +161,379 @@
     max-width: 220px;
   }
 }
+
+/* =========================================
+   DONATION MODAL
+========================================= */
+
+.donation-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  background: rgba(7, 28, 58, 0.78);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  animation: donationFadeIn 0.25s ease;
+}
+
+
+/* =========================================
+   MODAL
+========================================= */
+
+.donation-modal {
+  position: relative;
+
+  width: 100%;
+  max-width: 520px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 45px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25);
+
+  animation: donationSlideUp 0.3s ease;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.donation-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #f3f6fa;
+
+  color: #12345b;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.donation-modal-close:hover {
+  background: #ff941f;
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.donation-modal-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.donation-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 15px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 148, 31, 0.12);
+
+  color: #ff941f;
+
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.donation-modal-tag {
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: #1255b5;
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+}
+
+.donation-modal-header h2 {
+  margin: 0 0 12px;
+
+  color: #12345b;
+
+  font-size: 2rem;
+}
+
+.donation-modal-header p {
+  max-width: 420px;
+
+  margin: 0 auto;
+
+  color: #64748b;
+
+  font-size: 0.92rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   BANK DETAILS
+========================================= */
+
+.bank-details {
+  padding: 22px;
+
+  border: 1px solid #e4ebf5;
+
+  border-radius: 16px;
+
+  background: #f8fbff;
+}
+
+.bank-details h3 {
+  margin: 0 0 18px;
+
+  color: #12345b;
+
+  font-size: 1.05rem;
+}
+
+.bank-detail {
+  padding: 14px 0;
+
+  border-bottom: 1px solid #e3eaf3;
+}
+
+.bank-detail:last-child {
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+.bank-detail span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #64748b;
+
+  font-size: 0.72rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+}
+
+.bank-detail strong {
+  color: #12345b;
+
+  font-size: 0.95rem;
+}
+
+
+/* =========================================
+   ACCOUNT NUMBER + COPY
+========================================= */
+
+.account-number-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.copy-account {
+  flex-shrink: 0;
+
+  padding: 8px 13px;
+
+  border: 1px solid #1255b5;
+
+  border-radius: 7px;
+
+  background: transparent;
+
+  color: #1255b5;
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.copy-account:hover {
+  background: #1255b5;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   DONATION NOTE
+========================================= */
+
+.donation-note {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 20px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  background: rgba(255, 148, 31, 0.07);
+}
+
+.donation-note span {
+  flex-shrink: 0;
+
+  font-size: 1rem;
+}
+
+.donation-note p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 0.82rem;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   DONE BUTTON
+========================================= */
+
+.donation-done {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 13px 20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #0b3b91;
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.donation-done:hover {
+  background: #ff941f;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes donationFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes donationSlideUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .donation-modal-overlay {
+    padding: 15px;
+  }
+
+  .donation-modal {
+    padding: 35px 22px 25px;
+
+    border-radius: 18px;
+  }
+
+  .donation-modal-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .account-number-row {
+    align-items: flex-end;
+  }
+
+  .copy-account {
+    padding: 7px 10px;
+  }
+}

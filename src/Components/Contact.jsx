@@ -1,4 +1,3 @@
-
 // src/components/Contact.jsx
 
 import React, { useState } from 'react';
@@ -14,6 +13,10 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
+
+  // Replace this with VGB Foundation's real WhatsApp number
+  // Use international format without +, spaces, or brackets
+  const whatsappNumber = '2349056012206';
 
   const validate = () => {
     const newErrors = {};
@@ -45,8 +48,27 @@ const Contact = () => {
     const newErrors = validate();
 
     if (Object.keys(newErrors).length === 0) {
-      alert('Thank you for reaching out to VGB Foundation!');
+      const whatsappMessage = `
+Hello VGB Foundation,
 
+My name is: ${formData.name}
+
+Email: ${formData.email}
+
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+      `.trim();
+
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+        whatsappMessage
+      )}`;
+
+      // Open WhatsApp
+      window.open(whatsappUrl, '_blank');
+
+      // Clear form
       setFormData({
         name: '',
         email: '',
@@ -96,25 +118,14 @@ const Contact = () => {
           </p>
         </div>
 
-
         <div className="contact-container">
 
           {/* Contact Information */}
           <div className="contact-info">
 
-            <span className="contact-tag">CONTACT VGB FOUNDATION</span>
-
-            <h3>
-              There are many ways to
-              <span> get involved.</span>
-            </h3>
-
-            <p>
-              Whether you want to support our programs, collaborate with us,
-              volunteer your time, or simply learn more about what we do,
-              reach out to our team.
-            </p>
-
+            <span className="contact-tag">
+              CONTACT VGB FOUNDATION
+            </span>
 
             {/* Email */}
             <div className="contact-item">
@@ -124,27 +135,31 @@ const Contact = () => {
 
               <div>
                 <span>Email Us</span>
+
                 <a href="mailto:info@vgbfoundation.org">
                   info@vgbfoundation.org
                 </a>
               </div>
             </div>
 
-
-            {/* Phone */}
+            {/* WhatsApp */}
             <div className="contact-item">
               <div className="contact-icon">
-                <i className="fas fa-phone"></i>
+                <i className="fab fa-whatsapp"></i>
               </div>
 
               <div>
-                <span>Call Us</span>
-                <a href="tel:+2340000000000">
-                  +234 XXX XXX XXXX
+                <span>WhatsApp Us</span>
+
+                <a
+                  href={`https://wa.me/${whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Chat with us on WhatsApp
                 </a>
               </div>
             </div>
-
 
             {/* Location */}
             <div className="contact-item">
@@ -158,13 +173,11 @@ const Contact = () => {
               </div>
             </div>
 
-
             {/* Social Media */}
             <div className="contact-socials">
               <span>Follow Our Work</span>
 
               <div className="social-links">
-
                 <a href="#" aria-label="Facebook">
                   <i className="fab fa-facebook-f"></i>
                 </a>
@@ -173,11 +186,18 @@ const Contact = () => {
                   <i className="fab fa-instagram"></i>
                 </a>
 
+                <a
+                  href={`https://wa.me/${whatsappNumber}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                >
+                  <i className="fab fa-whatsapp"></i>
+                </a>
               </div>
             </div>
 
           </div>
-
 
           {/* Contact Form */}
           <div className="contact-form-wrapper">
@@ -185,7 +205,8 @@ const Contact = () => {
             <h3>Send Us a Message</h3>
 
             <p>
-              Fill out the form below and our team will get back to you.
+              Fill out the form below and your message will open directly
+              in WhatsApp.
             </p>
 
             <form
@@ -196,7 +217,9 @@ const Contact = () => {
 
               {/* Name */}
               <div className="form-group">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">
+                  Full Name
+                </label>
 
                 <input
                   id="name"
@@ -208,14 +231,17 @@ const Contact = () => {
                 />
 
                 {errors.name && (
-                  <span className="error">{errors.name}</span>
+                  <span className="error">
+                    {errors.name}
+                  </span>
                 )}
               </div>
 
-
               {/* Email */}
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">
+                  Email Address
+                </label>
 
                 <input
                   id="email"
@@ -227,14 +253,17 @@ const Contact = () => {
                 />
 
                 {errors.email && (
-                  <span className="error">{errors.email}</span>
+                  <span className="error">
+                    {errors.email}
+                  </span>
                 )}
               </div>
 
-
               {/* Subject */}
               <div className="form-group">
-                <label htmlFor="subject">How Can We Help?</label>
+                <label htmlFor="subject">
+                  How Can We Help?
+                </label>
 
                 <select
                   id="subject"
@@ -242,33 +271,43 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                 >
-                  <option value="">Select an option</option>
+                  <option value="">
+                    Select an option
+                  </option>
+
                   <option value="General Enquiry">
                     General Enquiry
                   </option>
+
                   <option value="Partnership">
                     Partnership
                   </option>
+
                   <option value="Volunteer">
                     Volunteer
                   </option>
+
                   <option value="Donation">
                     Donation / Support
                   </option>
+
                   <option value="Programmes">
                     Programmes & Training
                   </option>
                 </select>
 
                 {errors.subject && (
-                  <span className="error">{errors.subject}</span>
+                  <span className="error">
+                    {errors.subject}
+                  </span>
                 )}
               </div>
 
-
               {/* Message */}
               <div className="form-group">
-                <label htmlFor="message">Your Message</label>
+                <label htmlFor="message">
+                  Your Message
+                </label>
 
                 <textarea
                   id="message"
@@ -280,24 +319,24 @@ const Contact = () => {
                 />
 
                 {errors.message && (
-                  <span className="error">{errors.message}</span>
+                  <span className="error">
+                    {errors.message}
+                  </span>
                 )}
               </div>
-
 
               <Button
                 type="submit"
                 variant="primary"
               >
-                Send Message →
+                <i className="fab fa-whatsapp"></i>
+                &nbsp; Send via WhatsApp
               </Button>
 
             </form>
-
           </div>
 
         </div>
-
       </div>
     </section>
   );

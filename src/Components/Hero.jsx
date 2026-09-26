@@ -6,7 +6,7 @@ import heroImg from './../assets/hero_image.png';
 
 const Hero = () => {
   return (
-    <section className="hero">
+    <section className="hero" id='home'>
       <div className="container hero-container">
 
         <div className="hero-content">
@@ -23,8 +23,8 @@ const Hero = () => {
           </p>
 
           <div className="hero-buttons">
-            <Button variant="primary">Get Involved</Button>
-            <Button variant="none" className="btn-outline">Learn More</Button>
+            <Button variant="primary" href="#contact">Get Involved</Button>
+            <Button variant="outline" href="#about-us">Learn More</Button>
           </div>
 
           <div className="hero-impact">

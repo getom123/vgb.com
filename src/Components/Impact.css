@@ -1,5 +1,6 @@
-
-/* src/components/Impact.css */
+/* =========================================
+   IMPACT SECTION
+========================================= */
 
 .portfolio {
   padding: 100px 0;
@@ -8,7 +9,10 @@
   background-color: #ffffff;
 }
 
-/* Soft decorative glow - top right */
+/* =========================================
+   DECORATIVE GLOWS
+========================================= */
+
 .portfolio::before {
   content: "";
   position: absolute;
@@ -21,7 +25,6 @@
   pointer-events: none;
 }
 
-/* Soft orange glow - bottom left */
 .portfolio::after {
   content: "";
   position: absolute;
@@ -40,13 +43,13 @@
 }
 
 
-/* =========================
+/* =========================================
    SECTION HEADER
-========================= */
+========================================= */
 
 .portfolio .section-title {
   max-width: 720px;
-  margin: 0 auto 55px;
+  margin: 0 auto 60px;
   text-align: center;
 }
 
@@ -54,6 +57,10 @@
   color: #ff941f;
 }
 
+.portfolio .section-title h2 {
+  color: #12345b;
+  margin-bottom: 18px;
+}
 
 .portfolio .section-title h2 span {
   color: #ff941f;
@@ -67,156 +74,14 @@
 }
 
 
-/* =========================
-   MOST RECENT EVENT
-========================= */
-
-.latest-event {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  min-height: 420px;
-  margin-bottom: 90px;
-
-  overflow: hidden;
-
-  background: #ffffff;
-  border-radius: 24px;
-
-  box-shadow: 0 20px 50px rgba(11, 59, 145, 0.10);
-
-  border: 1px solid #e8eef7;
-}
-
-.latest-event-image {
-  width: 100%;
-  height: 420px;
-  overflow: hidden;
-}
-
-.latest-event-image img {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-  object-position: top;
-}
-
-.latest-event-image img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.latest-event:hover .latest-event-image img {
-  transform: scale(1.04);
-}
-
-
-/* =========================
-   FEATURED EVENT CONTENT
-========================= */
-
-.latest-event-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 55px;
-}
-
-.event-label {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-
-  margin-bottom: 18px;
-  padding: 7px 14px;
-
-  border-radius: 50px;
-
-  background: #ff941f;
-  color: #ffffff;
-
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.event-category {
-  display: block;
-  margin-bottom: 12px;
-
-  color: #1255b5;
-
-  font-size: 0.85rem;
-  font-weight: 700;
-
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.latest-event-content h3 {
-  margin: 0 0 15px;
-
-  color: #12345b;
-
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  line-height: 1.2;
-}
-
-.latest-event-content p {
-  margin: 0 0 28px;
-
-  color: #64748b;
-
-  font-size: 0.95rem;
-}
-
-
-/* =========================
-   EVENT BUTTON
-========================= */
-
-.event-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  width: fit-content;
-
-  padding: 13px 24px;
-
-  border-radius: 8px;
-
-  background: #0b3b91;
-  color: #ffffff;
-
-  text-decoration: none;
-
-  font-size: 0.9rem;
-  font-weight: 600;
-
-  transition: all 0.3s ease;
-}
-
-.event-button:hover {
-  background: #ff941f;
-  transform: translateY(-2px);
-}
-
-
-/* =========================
+/* =========================================
    EVENTS HEADER
-========================= */
+========================================= */
 
 .events-header {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-
   gap: 40px;
   margin-bottom: 35px;
 }
@@ -227,58 +92,72 @@
 
 .events-header h3 {
   margin: 8px 0 0;
-
   color: #12345b;
-
   font-size: 2rem;
+  line-height: 1.2;
 }
 
 .events-header p {
   max-width: 500px;
   margin: 0;
-
   color: #64748b;
-
   line-height: 1.7;
 }
 
 
-/* =========================
+/* =========================================
    EVENTS GRID
-========================= */
+========================================= */
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
 }
 
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* =========================================
+   CARD SUPPORT
+========================================= */
 
-@media (max-width: 992px) {
+.portfolio-grid > * {
+  min-width: 0;
+  height: 100%;
+}
 
+
+/* =========================================
+   RESPONSIVE - LARGE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .portfolio {
+    padding: 90px 0;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 768px) {
   .portfolio {
     padding: 80px 0;
   }
 
-  .latest-event {
-    grid-template-columns: 1fr;
+  .portfolio .section-title {
+    margin-bottom: 50px;
   }
 
-  .latest-event-image {
-    min-height: 350px;
-    height: 350px;
-  }
-
-  .latest-event-content {
-    padding: 40px;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .portfolio .section-title h2 {
+    font-size: 2rem;
   }
 
   .events-header {
@@ -286,43 +165,62 @@
     flex-direction: column;
     gap: 15px;
   }
+
+  .events-header h3 {
+    font-size: 1.8rem;
+  }
+
+  .events-header p {
+    max-width: 650px;
+  }
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
 
 @media (max-width: 600px) {
-
   .portfolio {
     padding: 65px 0;
+  }
+
+  .portfolio::before {
+    width: 280px;
+    height: 280px;
+    top: -120px;
+    right: -100px;
+  }
+
+  .portfolio::after {
+    width: 220px;
+    height: 220px;
+    bottom: -100px;
+    left: -100px;
   }
 
   .portfolio .section-title {
     margin-bottom: 40px;
   }
 
-  .latest-event {
-    margin-bottom: 65px;
-    border-radius: 16px;
+  .portfolio .section-title h2 {
+    font-size: 1.8rem;
   }
 
-  .latest-event-image {
-    min-height: 260px;
-    height: 260px;
+  .portfolio .section-title p {
+    font-size: 0.95rem;
   }
 
-  .latest-event-content {
-    padding: 30px 25px;
-  }
-
-  .latest-event-content h3 {
-    font-size: 1.7rem;
+  .events-header {
+    margin-bottom: 25px;
   }
 
   .events-header h3 {
     font-size: 1.6rem;
+  }
+
+  .events-header p {
+    font-size: 0.95rem;
   }
 
   .portfolio-grid {
@@ -331,3 +229,568 @@
   }
 }
 
+/* =========================================
+   CLICKABLE EVENT CARD
+========================================= */
+
+.event-card-wrapper {
+  cursor: pointer;
+  height: 100%;
+  outline: none;
+}
+
+.event-card-wrapper:focus-visible {
+  border-radius: 18px;
+  outline: 3px solid rgba(255, 148, 31, 0.35);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   FULL SCREEN EVENT MODAL
+========================================= */
+
+.event-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+
+  padding: 0;
+
+  background: rgba(7, 28, 58, 0.88);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  animation: modalFadeIn 0.25s ease;
+}
+
+
+/* =========================================
+   MODAL CONTAINER
+========================================= */
+
+.event-modal {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+  max-width: 1500px;
+
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 0;
+
+  box-shadow: 0 30px 100px rgba(0, 0, 0, 0.3);
+
+  animation: modalSlideUp 0.35s ease;
+}
+
+
+/* =========================================
+   IMAGE SIDE
+========================================= */
+
+.event-modal-image {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: #eef4fb;
+}
+
+
+/*
+   Show the FULL image.
+   Unlike object-fit: cover, contain prevents
+   the image from being cropped.
+*/
+
+.event-modal-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #eef4fb;
+}
+
+
+/* =========================================
+   IMAGE TAG
+========================================= */
+
+.modal-event-tag {
+  position: absolute;
+
+  left: 35px;
+  bottom: 35px;
+
+  padding: 9px 16px;
+
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  color: #1255b5;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.modal-event-tag.recent-tag {
+  background: #ff941f;
+  color: #ffffff;
+}
+
+
+/* =========================================
+   CONTENT SIDE
+========================================= */
+
+.event-modal-content {
+  height: 100vh;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 70px 8%;
+
+  background: #ffffff;
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.modal-category {
+  display: inline-block;
+
+  margin-bottom: 14px;
+
+  color: #1255b5;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.event-modal-content h2 {
+  max-width: 600px;
+
+  margin: 0 0 30px;
+
+  color: #12345b;
+
+  font-size: clamp(2rem, 4vw, 3.5rem);
+
+  line-height: 1.1;
+
+  letter-spacing: -0.02em;
+}
+
+
+/* =========================================
+   EVENT DETAILS
+========================================= */
+
+.event-details {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+
+  max-width: 650px;
+
+  margin-bottom: 35px;
+}
+
+.event-detail {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 17px;
+
+  border: 1px solid #e4ebf5;
+
+  border-radius: 12px;
+
+  background: #f8fbff;
+
+  transition: all 0.25s ease;
+}
+
+.event-detail:hover {
+  border-color: rgba(18, 85, 181, 0.2);
+
+  transform: translateY(-2px);
+}
+
+.detail-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: rgba(255, 148, 31, 0.1);
+
+  font-size: 1.1rem;
+}
+
+.event-detail small {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #64748b;
+
+  font-size: 0.72rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+.event-detail strong {
+  display: block;
+
+  color: #12345b;
+
+  font-size: 0.9rem;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.event-description,
+.event-join {
+  max-width: 650px;
+
+  margin-bottom: 25px;
+}
+
+.event-description h4,
+.event-join h4 {
+  margin: 0 0 8px;
+
+  color: #12345b;
+
+  font-size: 1rem;
+}
+
+.event-description p,
+.event-join p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 0.95rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   JOIN BUTTON
+========================================= */
+
+.event-modal-button {
+  width: fit-content;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 10px;
+
+  padding: 14px 28px;
+
+  border-radius: 8px;
+
+  background: #0b3b91;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.event-modal-button:hover {
+  background: #ff941f;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 25px rgba(255, 148, 31, 0.2);
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.event-modal-close {
+  position: fixed;
+
+  top: 25px;
+  right: 30px;
+
+  z-index: 10001;
+
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #12345b;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.25s ease;
+}
+
+.event-modal-close:hover {
+  background: #ff941f;
+
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.event-modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.event-modal-content::-webkit-scrollbar-track {
+  background: #f5f7fa;
+}
+
+.event-modal-content::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .event-modal {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: 42vh 58vh;
+
+    height: 100vh;
+  }
+
+  .event-modal-image {
+    min-height: 0;
+
+    height: 42vh;
+  }
+
+  .event-modal-image img {
+    object-fit: contain;
+  }
+
+  .event-modal-content {
+    height: 58vh;
+
+    padding: 40px 6%;
+
+    justify-content: flex-start;
+  }
+
+  .event-modal-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .event-modal-close {
+    top: 18px;
+    right: 20px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .event-modal {
+    grid-template-rows: 35vh 65vh;
+  }
+
+  .event-modal-image {
+    height: 35vh;
+  }
+
+  .event-modal-image img {
+    object-fit: contain;
+  }
+
+  .modal-event-tag {
+    left: 18px;
+    bottom: 18px;
+
+    padding: 7px 12px;
+
+    font-size: 0.65rem;
+  }
+
+  .event-modal-content {
+    height: 65vh;
+
+    padding: 30px 22px 40px;
+  }
+
+  .event-modal-content h2 {
+    margin-bottom: 22px;
+
+    font-size: 1.8rem;
+  }
+
+  .event-details {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+  }
+
+  .event-detail {
+    padding: 13px;
+  }
+
+  .event-description p,
+  .event-join p {
+    font-size: 0.9rem;
+  }
+
+  .event-modal-button {
+    width: 100%;
+  }
+
+  .event-modal-close {
+    width: 40px;
+    height: 40px;
+
+    top: 15px;
+    right: 15px;
+
+    font-size: 24px;
+  }
+}

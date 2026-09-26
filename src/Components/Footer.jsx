@@ -68,11 +68,11 @@ const Footer = () => {
 
             <p>
               <strong>Phone</strong><br />
-              +234 XXX XXX XXXX
+              +234 704 290 7904
             </p>
 
             <a href="#contact" className="footer-donate">
-              Support Our Work →
+              Support Us
             </a>
           </div>
 

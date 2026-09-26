@@ -1,20 +1,45 @@
-// src/components/ui/PortfolioCard.jsx
 import React from 'react';
 import './PortfolioCard.css';
 
-const PortfolioCard = ({ title, category, image }) => {
+const PortfolioCard = ({
+  title,
+  category,
+  date,
+  image,
+  featured,
+}) => {
   return (
-    <div className="portfolio-card">
-      <div className="portfolio-image" style={{ backgroundColor: image }}>
-        <div className="overlay">
-          <span>View Project →</span>
-        </div>
+    <article className="portfolio-card">
+
+      <div className="portfolio-card-image">
+        <img
+          src={image}
+          alt={title}
+        />
+
+        {/* Event Tag */}
+        <span
+          className={`portfolio-card-tag ${
+            featured ? 'recent-tag' : ''
+          }`}
+        >
+          {featured ? 'MOST RECENT' : category}
+        </span>
       </div>
-      <div className="portfolio-info">
-        <h4>{title}</h4>
-        <p>{category}</p>
+
+      <div className="portfolio-card-content">
+
+        <span className="portfolio-card-category">
+          {category}
+        </span>
+
+        <h3>{title}</h3>
+
+        <p>{date}</p>
+
       </div>
-    </div>
+
+    </article>
   );
 };
 

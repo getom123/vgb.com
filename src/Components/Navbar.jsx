@@ -11,8 +11,7 @@ const Navbar = () => {
     'Home',
     'About Us',
     'Our Programs',
-    'Impact',
-    'Contact'
+    'Impact'
   ];
 
   const handleLinkClick = () => {
@@ -45,7 +44,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <Button variant="primary" size="small">
+          <Button variant="primary" size="small" href="#contact">
             Get Involved
           </Button>
         </div>
